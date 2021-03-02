@@ -1,4 +1,5 @@
 # Universal Windows Platform
+
 # Build a Universal Windows Platform project using Visual Studio.
 # Add steps that test and distribute an app, save build artifacts, and more:
 # https://aka.ms/yaml
@@ -17,11 +18,10 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
-
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-
+- task: SonarQubeAnalyze@4
 - task: VSBuild@1
   inputs:
     platform: 'x86'
